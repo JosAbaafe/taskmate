@@ -1,6 +1,6 @@
 import environ
 import os
-import djang-heroku
+import django-heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
