@@ -1,0 +1,59 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Login</title>
+  </head>
+  <body style="background-color:#203647;">
+  <div class="container mt-5">
+    <div class="mt-3">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-info" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+        <div class="row">
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-6">
+            <div class="card m-4"  >
+              <div class="card-body">
+                <h2 class="text-center " style="color:#203647;" >Login to TaskMate</h2>
+                <hr>
+                    <form class="" method="post">
+                      {% csrf_token %}
+                      {{form|crispy}}
+                      <div class="form-group">
+                        <button type="submit" name="button" class="btn btn-primary btn-block">SIGN IN</button>
+                      </div>
+                      <div class="form-group float-right">
+                        <legend class="mt-4 ">New Member?<a href="{% url 'register' %}">Sign up</a></legend>
+
+                      </div>
+                    </form>
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-3">
+
+          </div>
+        </div>
+
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>
